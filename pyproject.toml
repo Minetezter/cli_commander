@@ -1,0 +1,22 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cli_commander"
+version = "0.0.1"
+authors = [
+  { name="Minetester", email="minetezter@protonmail.com" },
+]
+description = "Runs CLI (Command-Line Interface) commands. Run BASH commands, Linux commands, and more! All in python. Runs more than 95 commands, each in specific functions!"
+readme = "README.md"
+requires-python = ">=3.6"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: POSIX :: Linux",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/Minetezter/cli_commander"
+"Bug Tracker" = "https://github.com/Minetezter/cli_commander/issues"
