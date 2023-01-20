@@ -604,3 +604,7 @@ def logname():
     '''Gets your username.'''
     system("logname")
 
+def mkdir(dirname):
+    '''Runs the linux 'mkdir' command.
+    Creates a new directory of the given name.'''
+    system(f"mkdir {dirname}")
