@@ -47,7 +47,7 @@ myVenv = cli.venv("MyExampleVenv").enter()
 myVenv.leave()
 ```
 
-# Need help with the 98 more fuctions?
+# Need help with the 98 more functions?
 
 **Run this:**
 
