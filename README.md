@@ -4,6 +4,10 @@ CLI commander is an easy-to-use python library for running CLI commands.
 All commands are supported on Linux Mint 21, and some commands are supported on other
 systems too.
 
+**Very good packge! You can actually get the output of commands,
+assign command output to variables,
+print command output, and more!**
+
 # Pip installation:
 **Run this in your command prompt/shell:**
 
