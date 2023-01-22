@@ -20,7 +20,7 @@ pip install cli_commander
 How to import cli-commander with no issues:
 
 ```python
-from cli_commander import commands
+import cli_commander.commands
 ```
 
 # cli-commander venv
@@ -28,7 +28,7 @@ from cli_commander import commands
 Create a new virtual environment like this:
 
 ```python
-from cli_commander import commands as cli
+import cli_commander.commands as cli
 
 cli.venv("MyExampleVenv").new()
 ```
@@ -36,7 +36,7 @@ cli.venv("MyExampleVenv").new()
 Get into an existing virtual environment like this:
 
 ```python
-from cli_commander import commands as cli
+import cli_commander.commands as cli
 
 cli.venv("MyExampleVenv").new()
 ```
@@ -45,7 +45,7 @@ You can leave a virtual environment using the venv.leave() function.
 Example:
 
 ```python
-from cli_commander import commands as cli
+import cli_commander.commands as cli
 
 myVenv = cli.venv("MyExampleVenv").enter()
 myVenv.leave()
@@ -56,7 +56,7 @@ myVenv.leave()
 **Run this:**
 
 ```python
-from cli_commander import commands as cli
+import cli_commander.commands as cli
 help(cli)
 ```
 
