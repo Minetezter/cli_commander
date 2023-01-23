@@ -42,7 +42,7 @@ def write(username, tty):
     '''runs the Linux write command, and automatically adds the arguments ("username" and "TTY").
     Used for chatting with users. Very simple and easy to use. Does not allow the "options" argument.'''
     command = "write " + username + " " + tty
-    return GET_CLI_OUTPUT(command)
+    os.system(command)
 
 
 def exit():
@@ -61,7 +61,7 @@ def ip_addr():
 
 def man(item):
     '''Runs the Linux "man" command, which returns the description of the given command.'''
-    return GET_CLI_OUTPUT("man " + item)
+    os.system("man " + item)
 
 
 def venv(venvname):
@@ -71,24 +71,24 @@ def venv(venvname):
     class opt:
         def new():
             '''Create a new virtual environment.'''
-            return GET_CLI_OUTPUT(f"python3 -m venv {venvname}")
-            return GET_CLI_OUTPUT(f"cd {venvname}")
-            return GET_CLI_OUTPUT("source bin/activate")
+            os.system(f"python3 -m venv {venvname}")
+            os.system(f"cd {venvname}")
+            os.system("source bin/activate")
             
             class venvoptions:
                 def leave():
-                    return GET_CLI_OUTPUT("deactivate")
+                    os.system("deactivate")
             
             return venvoptions
         
         def enter():
             '''Enter an existing virtual environment.'''
-            return GET_CLI_OUTPUT(f"cd ./{venvname}")
-            return GET_CLI_OUTPUT("source bin/activate")
+            os.system(f"cd ./{venvname}")
+            os.system("source bin/activate")
             
             class venvoptions:
                 def leave():
-                    return GET_CLI_OUTPUT("deactivate")
+                    return os.system("deactivate")
             
             return venvoptions
     
@@ -104,22 +104,22 @@ def w(user=""):
 def pip_install(library):
     '''Tries to run Linux "pip install" command on the given library.
     Should work, if the conditions are right.'''
-    return GET_CLI_OUTPUT(f"pip install {library}")
+    os.system(f"pip install {library}")
 
 
 def pip_search(library):
     '''Tries to run the Linux "pip search" command, although it may be down forever.'''
-    return GET_CLI_OUTPUT(f"pip search {library}")
+    os.system(f"pip search {library}")
 
 
 def pip_help(library):
     '''Runs the Linux "pip help" command, on the given library.'''
-    return GET_CLI_OUTPUT(f"pip help {library}")
+    os.system(f"pip help {library}")
 
 
 def PIP(mode, library):
     '''Runs the given "pip" command, on the given library.'''
-    return GET_CLI_OUTPUT(f"pip {mode} {library}")
+    os.system(f"pip {mode} {library}")
 
 
 def get_help(obj):
@@ -130,19 +130,19 @@ def get_help(obj):
 def vim(vimname):
     '''Creates a vim file of the given name. for example, you can run vim("main.py").
     This creates the local file "main.py". Run man("vim") for more info.'''
-    return GET_CLI_OUTPUT(f"vim {vimname}")
+    os.system(f"vim {vimname}")
 
 
 def vi(viname):
     '''Runs the Linux "v" command.
     Basically an old-fashioned vim. I would recommend vim.'''
-    return GET_CLI_OUTPUT(f"vi {vimname}")
+    os.system(f"vi {vimname}")
 
 
 def wall():
     '''Runs the "wall" command.
     Similar to the "write" command, but your message gets sent to everyone.'''
-    return GET_CLI_OUTPUT("wall")
+    os.system("wall")
 
 
 def which(item):
@@ -160,7 +160,7 @@ def enterPathOf(*path):
       for i in path:
           endPath += f"/{i}"
     
-    return GET_CLI_OUTPUT(endPath)
+    os.system(endPath)
 
 
 def wCom(command):
@@ -243,19 +243,19 @@ def ip_ntable():
 def python3():
     '''Runs the Linux "python3" command.
     Allows you to run python commands inside python. Runs the version the system is running'''
-    return GET_CLI_OUTPUT("python3")
+    os.system("python3")
 
 
 def python_file(file):
     '''Runs a python file.
     Runs the file of the single argument "file". Vim files are normally callable using this command.'''
-    return GET_CLI_OUTPUT(f"python {file}")
+    os.system(f"python {file}")
 
 
 def cpp():
     '''Runs the Linux "cpp" command.
     Basically allows you to run C++ in python.'''
-    return GET_CLI_OUTPUT("cpp")
+    os.system("cpp")
 
 
 def dirs():
@@ -372,12 +372,12 @@ def version(obj):
 def source(file):
     '''Runs the Linux "source" command.
     Can never read binary files. Very useful command.'''
-    return GET_CLI_OUTPUT(f"source {file}")
+    os.system(f"source {file}")
 
 
 def alt(command):
     '''Runs commands that are not as separate functions.'''
-    return GET_CLI_OUTPUT(command)
+    os.system(command)
 
 
 def uname():
@@ -458,13 +458,13 @@ def lsCom(command):
 
 def bash():
     '''Runs the Linux "bash" command.'''
-    return GET_CLI_OUTPUT("bash")
+    os.system("bash")
 
 
 def sh():
     '''Runs the Linux "sh" command.
     One of my favorites from cli_commander. I really recommend it!'''
-    return GET_CLI_OUTPUT("sh")
+    os.system("sh")
 
 
 def env():
@@ -475,89 +475,89 @@ def env():
 
 def edit():
     '''Runs the Linux "edit" command.'''
-    return GET_CLI_OUTPUT("edit")
+    os.system("edit")
 
 
 def edit_action(file):
     '''Runs the Linux "edit action" command.
     An attribute of the "edit" command. Has one argument, "file".'''
-    return GET_CLI_OUTPUT(f"edit {file}")
+    os.system(f"edit {file}")
 
 
 def editCom(command):
     '''Runs the given property of the "edit" command.'''
-    return GET_CLI_OUTPUT(f"edit {command}")
+    os.system(f"edit {command}")
 
 
 def install_d(directory):
     '''Runs the Linux "install -d" command.
     An attribute of the "install" command. One argument "directory". Works the same as the Linux command.'''
-    return GET_CLI_OUTPUT(f"install -d {directory}")
+    os.system(f"install -d {directory}")
 
 
 def install_D():
     '''Runs the Linux "install -D" command.
     An attribute of the "install" command.'''
-    return GET_CLI_OUTPUT(f"install -D")
+    os.system(f"install -D")
 
 
 def install_g(group):
     '''Runs the Linux "install -g" command.
     An attribute of the "install" command. One argument "group". Works the same as the Linux command.'''
-    return GET_CLI_OUTPUT(f"install -g group={group}")
+    os.system(f"install -g group={group}")
 
 
 def install_m(mode):
     '''Runs the Linux "install -m" command.
     An attribute of the "install" command. One argument "mode". Works the same as the Linux command.'''
-    return GET_CLI_OUTPUT(f"install -m mode={mode}")
+    os.system(f"install -m mode={mode}")
 
 
 def install_o(owner):
     '''Runs the Linux "install -o" command.
     An attribute of the "install" command. One argument "owner". Works the same as the Linux command.'''
-    return GET_CLI_OUTPUT(f"install -g owner={owner}")
+    os.system(f"install -g owner={owner}")
 
 
 def install_p(preserve_timestamps):
     '''Runs the Linux "install -p" command.
     An attribute of the "install" command. One argument "preserve_timestamps". Works the same as the Linux command.'''
-    return GET_CLI_OUTPUT(f"install -p {preserve_timestamps}")
+    os.system(f"install -p {preserve_timestamps}")
 
 
 def install_s(strip):
     '''Runs the Linux "install -s" command.
     An attribute of the "install" command. One argument "strip". Works the same as the Linux command.'''
-    return GET_CLI_OUTPUT(f"install -s {strip}")
+    os.system(f"install -s {strip}")
 
 
 def install_S(suffix):
     '''Runs the Linux "install -S" command.
     An attribute of the "install" command. One argument "suffix". Works the same as the Linux command.'''
-    return GET_CLI_OUTPUT(f"install -p suffix={suffix}")
+    os.system(f"install -p suffix={suffix}")
 
 
 def install_t(target_directory):
     '''Runs the Linux "install -t" command.
     An attribute of the "install" command. One argument "target_directory". Works the same as the Linux command.'''
-    return GET_CLI_OUTPUT(f"install -t target_directory={target_directory}")
+    os.system(f"install -t target_directory={target_directory}")
 
 
 def install_T(no_target_directory):
     '''Runs the Linux "install -T" command.
     An attribute of the "install" command. One argument "no_target_directory". Works the same as the Linux command.'''
-    return GET_CLI_OUTPUT(f"install -T {no_target_directory}")
+    os.system(f"install -T {no_target_directory}")
 
 
 def install_Z():
     '''Runs the Linux "install -Z" command.
     An attribute of the "install" command.'''
-    return GET_CLI_OUTPUT(f"install -Z")
+    os.system(f"install -Z")
 
 
 def installCom(command):
     '''Runs the given property of the "install" command.'''
-    return GET_CLI_OUTPUT(f"install {command}")
+    os.system(f"install {command}")
 
 
 def ssh():
@@ -567,7 +567,7 @@ def ssh():
 
 def sshCom(command):
     '''Runs the given ssh property.'''
-    return GET_CLI_OUTPUT(f"ssh {command}")
+    os.system(f"ssh {command}")
 
 
 def zipCom(command):
@@ -600,7 +600,7 @@ def command_p(arg):
 
 def unminimize():
     '''Runs the "unminimize" command.'''
-    return GET_CLI_OUTPUT("unminimize")
+    os.system("unminimize")
 
 
 def ls_all():
@@ -622,7 +622,7 @@ def logname():
 def mkdir(dirname):
     '''Runs the linux 'mkdir' command.
     Creates a new directory of the given name.'''
-    return GET_CLI_OUTPUT(f"mkdir {dirname}")
+    os.system(f"mkdir {dirname}")
 
 def history():
     '''Runs the history command. Allows you to view a long history of commands you've run.'''
@@ -631,11 +631,11 @@ def history():
 def mv(start, dest):
     '''Runs the Linux mv [filename] [filename] command.
     Lets you move files.'''
-    return GET_CLI_OUTPUT(f"mv {start} {dest}")
+    os.system(f"mv {start} {dest}")
 
 def rm(file):
     '''Removes the given file.'''
-    return GET_CLI_OUTPUT(f"rm {file}")
+    os.system(f"rm {file}")
 
 def sudo(args):
     '''Runs the Linux "sudo [command]" command.
@@ -649,24 +649,29 @@ def ping(address):
 
 def sudo_apt_install(arg):
     '''Installs software.'''
-    return GET_CLI_OUTPUT(f"sudo apt install {arg}")
+    os.system(f"sudo apt install {arg}")
 
 def sudo_aptget_install(arg):
     '''Also installs software. mostly for systems other than Linux'''
-    return GET_CLI_OUTPUT(f"sudo apt-get install {arg}")
+    os.system(f"sudo apt-get install {arg}")
 
 def tcpdump(address):
     '''Runs the tcpdump command! Very useful and highly recommanded!'''
-    return GET_CLI_OUTPUT(f"sudo tcpdump {address}")
+    os.system(f"sudo tcpdump {address}")
 
 def tcpdump_w(address, file):
     '''Runs the tcpdump command! Very useful and highly recommanded!'''
-    return GET_CLI_OUTPUT(f"sudo tcpdump {address} -w {file}")
+    os.system(f"sudo tcpdump {address} -w {file}")
 
 def tcpdump_r(address, file):
     '''Runs the tcpdump command! Very useful and highly recommanded!'''
-    return GET_CLI_OUTPUT(f"sudo tcpdump {address} -r {file}")
+    os.system(f"sudo tcpdump {address} -r {file}")
 
 def sudo_reboot():
     '''Runs the sudo reboot Linux command.'''
-    return GET_CLI_OUTPUT(f"sudo reboot")
+    os.system("sudo reboot")
+
+def ifconfig(name):
+    """Runs the Linux ifconfig command.
+    Gets addresses. Really good!"""
+    return GET_CLI_OUTPUT(f"ifconfig {name}")
