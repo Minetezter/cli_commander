@@ -7,7 +7,7 @@ def GET_CLI_OUTPUT(command):
 
     os.system(f"{command} > {rand}.txt")
 
-    fs = open(f"{rand}.txt", 'r')
+    fs = open(f"{rand}.txt", 'rb')
     out = fs.read()
     fs.close()
 
