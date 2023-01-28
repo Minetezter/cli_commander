@@ -1,5 +1,4 @@
 import os
-from sys import exit as ex
 import random
 
 def GET_CLI_OUTPUT(command):
@@ -48,8 +47,8 @@ def write(username, tty):
 def exit():
     '''Runs the python 3 Linux exit() command.
     Because using os.system() for running the "exit()" command does not work well,
-    this actually uses the sys module.'''
-    ex()
+    so this just exits.'''
+    exit()
 
 
 def ip_addr():
@@ -675,3 +674,7 @@ def ifconfig(name):
     """Runs the Linux ifconfig command.
     Gets addresses. Really good!"""
     return GET_CLI_OUTPUT(f"ifconfig {name}")
+
+def date(args=""):
+    """Gets the current date."""
+    return GET_CLI_OUTPUT(f"date {args}")
